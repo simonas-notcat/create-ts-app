@@ -109,7 +109,7 @@ function setupCompiler(port) {
     // options so we are going to "massage" the warnings and errors and present
     // them in a readable focused way.
     // We use stats.toJson({}, true) to make output more compact and readable:
-    // https://github.com/facebookincubator/create-react-app/issues/401#issuecomment-238291901
+    // https://github.com/facebookincubator/create-ts-app/issues/401#issuecomment-238291901
     var json = stats.toJson({}, true);
     var formattedErrors = json.errors.map(message =>
       'Error in ' + formatMessage(message)
@@ -232,7 +232,7 @@ function runDevServer(port) {
     // by listening to the compiler events with `compiler.plugin` calls above.
     quiet: true,
     // Reportedly, this avoids CPU overload on some systems.
-    // https://github.com/facebookincubator/create-react-app/issues/293
+    // https://github.com/facebookincubator/create-ts-app/issues/293
     watchOptions: {
       ignored: /node_modules/
     }

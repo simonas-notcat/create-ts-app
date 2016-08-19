@@ -18,7 +18,7 @@ var isEjected = (
   path.resolve(process.cwd())
 );
 
-// Are we developing create-react-app locally?
+// Are we developing create-ts-app locally?
 var isInCreateReactAppSource = (
   process.argv.some(arg => arg.indexOf('--debug-template') > -1)
 );
@@ -32,7 +32,7 @@ function resolveApp(relativePath) {
 }
 
 if (isInCreateReactAppSource) {
-  // create-react-app development: we're in ./config/
+  // create-ts-app development: we're in ./config/
   module.exports = {
     appBuild: resolveOwn('../build'),
     appHtml: resolveOwn('../template/index.html'),
@@ -42,7 +42,7 @@ if (isInCreateReactAppSource) {
     ownNodeModules: resolveOwn('../node_modules')
   };
 } else if (!isEjected) {
-  // before eject: we're in ./node_modules/react-scripts/config/
+  // before eject: we're in ./node_modules/tsapp-scripts/config/
   module.exports = {
     appBuild: resolveApp('build'),
     appHtml: resolveApp('index.html'),

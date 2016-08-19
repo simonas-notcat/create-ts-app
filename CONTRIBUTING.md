@@ -1,6 +1,6 @@
-# Contributing to `create-react-app`
+# Contributing to `create-ts-app`
 
-♥ `create-react-app` and want to get involved? Thanks! There are plenty of ways you can help!
+♥ `create-ts-app` and want to get involved? Thanks! There are plenty of ways you can help!
 
 Please take a moment to review this document in order to make the contribution process easy and effective for everyone involved.
 
@@ -18,22 +18,22 @@ We try not to make any controversial choices. If the community is split between 
 
 Good pull requests - patches, improvements, new features - are a fantastic help. They should remain focused in scope and avoid containing unrelated commits.
 
-Please **ask first** if somebody else is already working on this or the core developers think your feature is in-scope for `create-react-app`. Generally always have a related issue with discussions for whatever you are including.
+Please **ask first** if somebody else is already working on this or the core developers think your feature is in-scope for `create-ts-app`. Generally always have a related issue with discussions for whatever you are including.
 
 Please also provide a **test plan**, i.e. specify how you verified what you added works.
 
 ## Setting up a local copy of the repository
 
-1. Clone the repo with `git clone https://github.com/facebookincubator/create-react-app`
+1. Clone the repo with `git clone https://github.com/facebookincubator/create-ts-app`
 
-2. Run `npm install` in the root `create-react-app` folder **and** the `create-react-app/global-cli` folder
+2. Run `npm install` in the root `create-ts-app` folder **and** the `create-ts-app/global-cli` folder
 
 Once it is done, you can modify any file locally and run `npm start` or `npm run build` just like in a generated project.
 
 If you want to try out the end-to-end flow with the global CLI, you can do this too:
 
 ```
-npm run create-react-app my-app
+npm run create-ts-app my-app
 cd my-app
 ```
 

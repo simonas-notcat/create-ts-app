@@ -22,7 +22,7 @@ var env = require('./env');
 module.exports = {
   // This makes the bundle appear split into separate modules in the devtools.
   // We don't use source maps here because they can be confusing:
-  // https://github.com/facebookincubator/create-react-app/issues/343#issuecomment-237241875
+  // https://github.com/facebookincubator/create-ts-app/issues/343#issuecomment-237241875
   // You may want 'cheap-module-source-map' instead if you prefer source maps.
   devtool: 'eval',
   // These are the "entry points" to our application.
@@ -47,7 +47,7 @@ module.exports = {
     // We ship a few polyfills by default.
     require.resolve('./polyfills'),
     // Finally, this is your app's code:
-    path.join(paths.appSrc, 'index')
+    path.join(paths.appSrc, 'index.tsx')
     // We include the app code last so that if there is a runtime error during
     // initialization, it doesn't blow up the WebpackDevServer client, and
     // changing JS code would still trigger a refresh.
@@ -66,44 +66,40 @@ module.exports = {
   },
   resolve: {
     // These are the reasonable defaults supported by the Node ecosystem.
-    extensions: ['.js', '.json', ''],
+    extensions: ['', '.js', '.json', '.tsx','.ts'],
     alias: {
       // This `alias` section can be safely removed after ejection.
-      // We do this because `babel-runtime` may be inside `react-scripts`,
+      // We do this because `babel-runtime` may be inside `tsapp-scripts`,
       // so when `babel-plugin-transform-runtime` imports it, it will not be
       // available to the app directly. This is a temporary solution that lets
       // us ship support for generators. However it is far from ideal, and
       // if we don't have a good solution, we should just make `babel-runtime`
       // a dependency in generated projects.
-      // See https://github.com/facebookincubator/create-react-app/issues/255
+      // See https://github.com/facebookincubator/create-ts-app/issues/255
       'babel-runtime/regenerator': require.resolve('babel-runtime/regenerator'),
       'react-native': 'react-native-web'
     }
   },
   // Resolve loaders (webpack plugins for CSS, images, transpilation) from the
-  // directory of `react-scripts` itself rather than the project directory.
+  // directory of `tsapp-scripts` itself rather than the project directory.
   // You can remove this after ejecting.
   resolveLoader: {
     root: paths.ownNodeModules,
     moduleTemplates: ['*-loader']
   },
   module: {
-    // First, run the linter.
-    // It's important to do this before Babel processes the JS.
-    preLoaders: [
-      {
-        test: /\.js$/,
-        loader: 'eslint',
-        include: paths.appSrc,
-      }
-    ],
     loaders: [
       // Process JS with Babel.
       {
-        test: /\.js$/,
+        test: /\.ts(x?)$/,
         include: paths.appSrc,
         loader: 'babel',
         query: require('./babel.dev')
+      },
+      {
+        test: /\.ts(x?)$/,
+        include: paths.appSrc,
+        loader: 'ts'
       },
       // "postcss" loader applies autoprefixer to our CSS.
       // "css" loader resolves paths in CSS and adds assets as dependencies.
@@ -114,6 +110,10 @@ module.exports = {
         test: /\.css$/,
         include: [paths.appSrc, paths.appNodeModules],
         loader: 'style!css!postcss'
+      },
+       {
+        test: /\.scss$/,
+        loaders: ['style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]', 'postcss', 'sass']
       },
       // JSON is not enabled by default in Webpack but both Node and Browserify
       // allow it implicitly so we also enable it.
@@ -165,13 +165,8 @@ module.exports = {
       }
     ]
   },
-  // Point ESLint to our predefined config.
-  eslint: {
-    configFile: path.join(__dirname, 'eslint.js'),
-    useEslintrc: false
-  },
   // We use PostCSS for autoprefixing only.
-  postcss: function() {
+  postcss: function () {
     return [
       autoprefixer({
         browsers: [
@@ -196,12 +191,12 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     // Watcher doesn't work well if you mistype casing in a path so we use
     // a plugin that prints an error when you attempt to do this.
-    // See https://github.com/facebookincubator/create-react-app/issues/240
+    // See https://github.com/facebookincubator/create-ts-app/issues/240
     new CaseSensitivePathsPlugin(),
     // If you require a missing module and then `npm install` it, you still have
     // to restart the development server for Webpack to discover it. This plugin
     // makes the discovery automatic so you don't have to restart.
-    // See https://github.com/facebookincubator/create-react-app/issues/186
+    // See https://github.com/facebookincubator/create-ts-app/issues/186
     new WatchMissingNodeModulesPlugin(paths.appNodeModules)
   ]
 };

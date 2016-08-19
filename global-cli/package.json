@@ -1,20 +1,20 @@
 {
-  "name": "create-react-app",
-  "version": "0.2.0",
+  "name": "create-ts-app",
+  "version": "0.1.0",
   "keywords": [
     "react"
   ],
   "description": "Create React apps with no build configuration.",
-  "repository": "facebookincubator/create-react-app",
+  "repository":"https://github.com/vgmr/create-ts-app/",
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/facebookincubator/create-react-app/issues"
+    "url": "https://github.com/vgmr/create-ts-app/issues"
   },
   "files": [
     "index.js"
   ],
   "bin": {
-    "create-react-app": "./index.js"
+    "create-ts-app": "./index.js"
   },
   "dependencies": {
     "chalk": "^1.1.1",

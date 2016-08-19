@@ -5,9 +5,9 @@ Create React apps with no build configuration.
 ## tl;dr
 
 ```sh
-npm install -g create-react-app
+npm install -g create-ts-app
 
-create-react-app my-app
+create-ts-app my-app
 cd my-app/
 npm start
 
@@ -25,7 +25,7 @@ When you’re ready to deploy to production, create a minified bundle with `npm 
 Install it once globally:
 
 ```sh
-npm install -g create-react-app
+npm install -g create-ts-app
 ```
 
 **You’ll need to have Node >= 4 on your machine**. We recommend to use Node >= 6 and npm >= 3 for faster installation speed and better disk usage. You can use [nvm](https://github.com/creationix/nvm#usage) to easily switch Node versions between different projects.
@@ -37,7 +37,7 @@ npm install -g create-react-app
 To create a new app, run:
 
 ```sh
-create-react-app my-app
+create-ts-app my-app
 cd my-app
 ```
 
@@ -84,7 +84,7 @@ Your app is ready to be deployed!
 ## How Do I…?
 
 The generated project will include a guide in its README.<br>
-You can also read its latest version [here](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md).
+You can also read its latest version [here](https://github.com/facebookincubator/create-ts-app/blob/master/template/README.md).
 
 ## Philosophy
 
@@ -96,7 +96,7 @@ You can also read its latest version [here](https://github.com/facebookincubator
 
 ## Why Use This?
 
-**If you’re getting started** with React, use `create-react-app` to automate the build of your app. There is no configuration file, and `react-scripts` is the only extra build dependency in your `package.json`. Your environment will have everything you need to build a modern React app:
+**If you’re getting started** with React, use `create-ts-app` to automate the build of your app. There is no configuration file, and `tsapp-scripts` is the only extra build dependency in your `package.json`. Your environment will have everything you need to build a modern React app:
 
 * React, JSX, and ES6 support.
 * Language extras beyond ES6 like the object spread operator.
@@ -147,7 +147,7 @@ All of them are transitive dependencies of the provided npm package.
 
 ## Contributing
 
-We'd love to have your helping hand on `create-react-app`! See [CONTRIBUTING.md](CONTRIBUTING.md) for more information on what we're looking for and how to get started.
+We'd love to have your helping hand on `create-ts-app`! See [CONTRIBUTING.md](CONTRIBUTING.md) for more information on what we're looking for and how to get started.
 
 ## Acknowledgements
 

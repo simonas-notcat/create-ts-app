@@ -1,5 +1,5 @@
 Below you will find some information on how to perform common tasks.  
-You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md).
+You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-ts-app/blob/master/template/README.md).
 
 ## Table of Contents
 
@@ -32,22 +32,22 @@ You can find the most recent version of this guide [here](https://github.com/fac
 
 Create React App is divided into two packages:
 
-* `create-react-app` is a global command-line utility that you use to create new projects.
-* `react-scripts` is a development dependency in the generated projects (including this one).
+* `create-ts-app` is a global command-line utility that you use to create new projects.
+* `tsapp-scripts` is a development dependency in the generated projects (including this one).
 
-You almost never need to update `create-react-app` itself: it’s delegates all the setup to `react-scripts`.
+You almost never need to update `create-ts-app` itself: it’s delegates all the setup to `tsapp-scripts`.
 
-When you run `create-react-app`, it always creates the project with the latest version of `react-scripts` so you’ll get all the new features and improvements in newly created apps automatically.
+When you run `create-ts-app`, it always creates the project with the latest version of `tsapp-scripts` so you’ll get all the new features and improvements in newly created apps automatically.
 
-To update an existing project to a new version of `react-scripts`, [open the changelog](https://github.com/facebookincubator/create-react-app/blob/master/CHANGELOG.md), find the version you’re currently on (check `package.json` in this folder if you’re not sure), and apply the migration instructions for the newer versions.
+To update an existing project to a new version of `tsapp-scripts`, [open the changelog](https://github.com/facebookincubator/create-ts-app/blob/master/CHANGELOG.md), find the version you’re currently on (check `package.json` in this folder if you’re not sure), and apply the migration instructions for the newer versions.
 
-In most cases bumping the `react-scripts` version in `package.json` and running `npm install` in this folder should be enough, but it’s good to consult the [changelog](https://github.com/facebookincubator/create-react-app/blob/master/CHANGELOG.md) for potential breaking changes.
+In most cases bumping the `tsapp-scripts` version in `package.json` and running `npm install` in this folder should be enough, but it’s good to consult the [changelog](https://github.com/facebookincubator/create-ts-app/blob/master/CHANGELOG.md) for potential breaking changes.
 
-We commit to keeping the breaking changes minimal so you can upgrade `react-scripts` painlessly.
+We commit to keeping the breaking changes minimal so you can upgrade `tsapp-scripts` painlessly.
 
 ## Sending Feedback
 
-We are always open to [your feedback](https://github.com/facebookincubator/create-react-app/issues).
+We are always open to [your feedback](https://github.com/facebookincubator/create-ts-app/issues).
 
 ## Folder Structure
 
@@ -114,7 +114,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Displaying Lint Output in the Editor
 
->Note: this feature is available with `react-scripts@0.2.0` and higher.
+>Note: this feature is available with `tsapp-scripts@0.2.0` and higher.
 
 Some editors, including Sublime Text, Atom, and Visual Studio Code, provide plugins for ESLint.
 
@@ -134,12 +134,12 @@ Then make sure `package.json` of your project ends with this block:
 {
   // ...
   "eslintConfig": {
-    "extends": "./node_modules/react-scripts/config/eslint.js"
+    "extends": "./node_modules/tsapp-scripts/config/eslint.js"
   }
 }
 ```
 
-Projects generated with `react-scripts@0.2.0` and higher should already have it.  
+Projects generated with `tsapp-scripts@0.2.0` and higher should already have it.  
 If you don’t need ESLint integration with your editor, you can safely delete those three lines from your `package.json`.
 
 Finally, you will need to install some packages *globally*:
@@ -306,7 +306,7 @@ Webpack finds all relative module references in CSS (they start with `./`) and r
 
 Please be advised that this is also a custom feature of Webpack.
 
-**It is not required for React** but many people enjoy it (and React Native uses a similar mechanism for images). However it may not be portable to some other environments, such as Node.js and Browserify. If you prefer to reference static assets in a more traditional way outside the module system, please let us know [in this issue](https://github.com/facebookincubator/create-react-app/issues/28), and we will consider support for this.
+**It is not required for React** but many people enjoy it (and React Native uses a similar mechanism for images). However it may not be portable to some other environments, such as Node.js and Browserify. If you prefer to reference static assets in a more traditional way outside the module system, please let us know [in this issue](https://github.com/facebookincubator/create-ts-app/issues/28), and we will consider support for this.
 
 ## Adding Bootstrap
 
@@ -336,7 +336,7 @@ Now you are ready to use the imported React Bootstrap components within your com
 
 ## Adding Flow
 
-Flow typing is currently [not supported out of the box](https://github.com/facebookincubator/create-react-app/issues/72) with the default `.flowconfig` generated by Flow. If you run it, you might get errors like this:
+Flow typing is currently [not supported out of the box](https://github.com/facebookincubator/create-ts-app/issues/72) with the default `.flowconfig` generated by Flow. If you run it, you might get errors like this:
 
 ```js
 node_modules/fbjs/lib/Deferred.js.flow:60
@@ -372,8 +372,8 @@ To fix this, change your `.flowconfig` to look like this:
 esproposal.class_static_fields=enable
 esproposal.class_instance_fields=enable
 
-module.name_mapper='^\(.*\)\.css$' -> 'react-scripts/config/flow/css'
-module.name_mapper='^\(.*\)\.\(jpg\|png\|gif\|eot\|otf\|svg\|ttf\|woff\|woff2\|mp4\|webm\)$' -> 'react-scripts/config/flow/file'
+module.name_mapper='^\(.*\)\.css$' -> 'tsapp-scripts/config/flow/css'
+module.name_mapper='^\(.*\)\.\(jpg\|png\|gif\|eot\|otf\|svg\|ttf\|woff\|woff2\|mp4\|webm\)$' -> 'tsapp-scripts/config/flow/file'
 
 suppress_type=$FlowIssue
 suppress_type=$FlowFixMe
@@ -381,7 +381,7 @@ suppress_type=$FlowFixMe
 
 Re-run flow, and you shouldn’t get any extra issues.
 
-If you later `eject`, you’ll need to replace `react-scripts` references with the `<PROJECT_ROOT>` placeholder, for example:
+If you later `eject`, you’ll need to replace `tsapp-scripts` references with the `<PROJECT_ROOT>` placeholder, for example:
 
 ```ini
 module.name_mapper='^\(.*\)\.css$' -> '<PROJECT_ROOT>/config/flow/css'
@@ -392,7 +392,7 @@ We will consider integrating more tightly with Flow in the future so that you do
 
 ## Adding Custom Environment Variables
 
-> Note: this feature is available with `react-scripts@0.3.0` and higher.
+> Note: this feature is available with `tsapp-scripts@0.3.0` and higher.
 
 Your project can consume variables declared in your environment as if they were declared locally in your JS files. By
 default you will have `NODE_ENV` defined for you, and any other environment variables starting with
@@ -462,11 +462,11 @@ if (process.env.NODE_ENV !== 'production') {
 
 ## Integrating with a Node Backend
 
-Check out [this tutorial](https://www.fullstackreact.com/articles/using-create-react-app-with-a-server/) for instructions on integrating an app with a Node backend running on another port, and using `fetch()` to access it. You can find the companion GitHub repository [here](https://github.com/fullstackreact/food-lookup-demo).
+Check out [this tutorial](https://www.fullstackreact.com/articles/using-create-ts-app-with-a-server/) for instructions on integrating an app with a Node backend running on another port, and using `fetch()` to access it. You can find the companion GitHub repository [here](https://github.com/fullstackreact/food-lookup-demo).
 
 ## Proxying API Requests in Development
 
->Note: this feature is available with `react-scripts@0.3.0` and higher.
+>Note: this feature is available with `tsapp-scripts@0.3.0` and higher.
 
 People often serve the front-end React app from the same host and port as their backend implementation.  
 For example, a production setup might look like this after the app is deployed:
@@ -514,11 +514,11 @@ This will let Create React App correctly infer the root path to use in the gener
 
 ### Now
 
-See [this example](https://github.com/xkawi/create-react-app-now) for a zero-configuration single-command deployment with [now](https://zeit.co/now).
+See [this example](https://github.com/xkawi/create-ts-app-now) for a zero-configuration single-command deployment with [now](https://zeit.co/now).
 
 ### Heroku
 
-Use the [Heroku Buildpack for create-react-app](https://github.com/mars/create-react-app-buildpack).
+Use the [Heroku Buildpack for create-ts-app](https://github.com/mars/create-ts-app-buildpack).
 
 ### Surge
 
@@ -529,21 +529,21 @@ Install the Surge CLI if you haven't already by running `npm install -g surge`. 
            password: ********
        project path: /path/to/project/build
                size: 7 files, 1.8 MB
-             domain: create-react-app.surge.sh
+             domain: create-ts-app.surge.sh
              upload: [====================] 100%, eta: 0.0s
    propagate on CDN: [====================] 100%
                plan: Free
               users: email@domain.com
          IP Address: X.X.X.X
 
-    Success! Project is published and running at create-react-app.surge.sh
+    Success! Project is published and running at create-ts-app.surge.sh
 ```
 
 Note that in order to support routers that use html5 `pushState` API, you may want to rename the `index.html` in your build folder to `200.html` before deploying to Surge. This [ensures that every URL falls back to that file](https://surge.sh/help/adding-a-200-page-for-client-side-routing).
 
 ### GitHub Pages
 
->Note: this feature is available with `react-scripts@0.2.0` and higher.
+>Note: this feature is available with `tsapp-scripts@0.2.0` and higher.
 
 Open your `package.json` and add a `homepage` field:
 
@@ -571,4 +571,4 @@ Note that GitHub Pages doesn't support routers that use the HTML5 `pushState` hi
 
 ## Something Missing?
 
-If you have ideas for more “How To” recipes that should be on this page, [let us know](https://github.com/facebookincubator/create-react-app/issues) or [contribute some!](https://github.com/facebookincubator/create-react-app/edit/master/template/README.md)
+If you have ideas for more “How To” recipes that should be on this page, [let us know](https://github.com/facebookincubator/create-ts-app/issues) or [contribute some!](https://github.com/facebookincubator/create-ts-app/edit/master/template/README.md)
