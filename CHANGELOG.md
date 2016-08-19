@@ -1,12 +1,13 @@
-## 0.1.3 (August 19, 2016)
+## 0.1.4 (August 19, 2016)
 
 ### Build Dependency (`tsapp-scripts`) 
 
-* forked from facebookincubator
+* forked from facebookincubator renamed in tsapp-scripts
 
 ### First release
 
 * use typescript
+* use sass
 * use redux and redux-helper
 * use bootstrap and react-bootstrap
 * jest use typescript
