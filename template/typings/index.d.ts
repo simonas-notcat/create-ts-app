@@ -1,4 +1,5 @@
 /// <reference path="globals/expect/index.d.ts" />
+/// <reference path="globals/jest/index.d.ts" />
 /// <reference path="globals/node/index.d.ts" />
 /// <reference path="globals/react-bootstrap/index.d.ts" />
 /// <reference path="globals/react/index.d.ts" />
