@@ -15,17 +15,20 @@ module.exports = (resolve, rootDir) => {
       '^[./a-zA-Z0-9$_-]+\\.css$': resolve('config/jest/CSSStub.js')
     },
     persistModuleRegistryBetweenSpecs: true,
-    scriptPreprocessor: resolve('config/jest/transform.js'),
+    //scriptPreprocessor: resolve('config/jest/transform.js'),
+    scriptPreprocessor: resolve('config/jest/preprocessor.js'),
     setupFiles: [
       resolve('config/polyfills.js')
     ],
+    testFileExtensions: ["ts", "tsx","js"],
+    moduleFileExtensions: ["ts", "tsx","js"],
     setupTestFrameworkScriptFile: resolve('config/jest/environment.js'),
     testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/build/'],
     // Allow three popular conventions:
     // **/__tests__/*.js
     // **/*.test.js
     // **/*.spec.js
-    testRegex: '(__tests__/.*|\\.(test|spec))\\.js$',
+    testRegex: '(__tests__/.*|\\.(test|spec))\\.ts(x?)$',
     testEnvironment: 'node',
     verbose: true
   };

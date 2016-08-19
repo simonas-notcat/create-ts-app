@@ -1,17 +1,10 @@
-/**
- * Copyright (c) 2014-present, Facebook, Inc. All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- */
+// Copyright 2004-present Facebook. All Rights Reserved.
 
 const babelDev = require('../babel.dev');
 const babelJest = require('babel-jest');
 
 module.exports = babelJest.createTransformer(babelDev);
 
-/*
 const tsc = require('typescript');
 
 module.exports = {
@@ -22,6 +15,7 @@ module.exports = {
         {
           module: tsc.ModuleKind.CommonJS,
           jsx: tsc.JsxEmit.React,
+          target: tsc.ScriptTarget.ES6
         },
         path,
         []
@@ -30,4 +24,3 @@ module.exports = {
     return src;
   },
 };
-*/

@@ -1,14 +1,17 @@
+jest.mock('react-dom'); // To prevent issue of duplicate env. injection
+
 import * as React from 'react';
 import App from '../components/containers/App';
-//import renderer from 'react-test-renderer';
+
+let renderer =require('react-test-renderer'); //no typings available.
 
 describe('App', () => {
   it('renders a welcome view', () => {
-    /*
+    
     const instance = renderer.create(<App />);
     const tree = instance.toJSON();
-    expect(tree).toMatchSnapshot();
-    */
-    expect(1).toEqual(1);
+    expect(tree)["toMatchSnapshot"]();   
+    
   });
 });
+
