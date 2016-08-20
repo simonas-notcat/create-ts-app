@@ -89,7 +89,7 @@ module.exports = {
   },
   module: {
     loaders: [
-      // Process JS with Babel.
+      // Process TS and TSX with Typescript and Babel.
       {
         test: /\.ts(x?)$/,
         include: paths.appSrc,
@@ -107,14 +107,9 @@ module.exports = {
       // In production, we use a plugin to extract that CSS to a file, but
       // in development "style" loader enables hot editing of CSS.
       {
-        test: /\.css$/,
+        test: /\.(s?)css$/,
         include: [paths.appSrc, paths.appNodeModules],
-        loader: 'style!css!postcss'
-      },
-       {
-        test: /\.scss$/,
-//        loaders: ['style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]', 'postcss', 'sass']
-        loaders: ['style', 'css?modules&importLoaders=1&localIdentName=[local]', 'postcss', 'sass']
+        loader: 'style!css!postcss!sass'
       },
       // JSON is not enabled by default in Webpack but both Node and Browserify
       // allow it implicitly so we also enable it.

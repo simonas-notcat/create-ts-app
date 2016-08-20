@@ -46,7 +46,7 @@ module.exports = {
   // In production, we only want to load the polyfills and the app code.
   entry: [
     require.resolve('./polyfills'),
-    path.join(paths.appSrc, 'index')
+    path.join(paths.appSrc, 'index.tsx')
   ],
   output: {
     // The build folder.
@@ -61,7 +61,7 @@ module.exports = {
   },
   resolve: {
     // These are the reasonable defaults supported by the Node ecosystem.
-    extensions: ['.js', '.json', ''],
+    extensions: ['', '.js', '.json', '.tsx','.ts'],
     alias: {
       // This `alias` section can be safely removed after ejection.
       // We do this because `babel-runtime` may be inside `tsapp-scripts`,
@@ -83,16 +83,18 @@ module.exports = {
     moduleTemplates: ['*-loader']
   },
   module: {
-    // It's important to do this before Babel processes the JS.
-    preLoaders: [
-    ],
     loaders: [
-      // Process JS with Babel.
+      // Process TS and TSX with Typescript and Babel.
       {
-        test: /\.js$/,
+        test: /\.ts(x?)$/,
         include: paths.appSrc,
         loader: 'babel',
-        query: require('./babel.prod')
+        query: require('./babel.dev')
+      },
+      {
+        test: /\.ts(x?)$/,
+        include: paths.appSrc,
+        loader: 'ts'
       },
       // The notation here is somewhat confusing.
       // "postcss" loader applies autoprefixer to our CSS.
@@ -107,7 +109,7 @@ module.exports = {
       // use the "style" loader inside the async code so CSS from them won't be
       // in the main CSS file.
       {
-        test: /\.css$/,
+        test: /\.(s?)css$/,
         include: [paths.appSrc, paths.appNodeModules],
         // "?-autoprefixer" disables autoprefixer in css-loader itself:
         // https://github.com/webpack/css-loader/issues/281
@@ -117,7 +119,7 @@ module.exports = {
         // Webpack 1.x uses Uglify plugin as a signal to minify *all* the assets
         // including CSS. This is confusing and will be removed in Webpack 2:
         // https://github.com/webpack/webpack/issues/283
-        loader: ExtractTextPlugin.extract('style', 'css?-autoprefixer!postcss')
+        loader: ExtractTextPlugin.extract('style', 'css?-autoprefixer!postcss!sass')
         // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
       },
       // JSON is not enabled by default in Webpack but both Node and Browserify

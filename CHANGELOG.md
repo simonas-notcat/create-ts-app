@@ -18,7 +18,8 @@
 * configure babel for production 
 
 
-## 0.1.6 (August 20,2016)
+## 0.1.7 (August 20,2016)
 
 * removed linter 
 * fixed scss configuration
+* configured babel for production
