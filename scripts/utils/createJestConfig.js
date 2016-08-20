@@ -20,7 +20,7 @@ module.exports = (resolve, rootDir) => {
     setupFiles: [
       resolve('config/polyfills.js')
     ],
-    //testFileExtensions: ["ts", "tsx", "js"],
+    //testFileExtensions: ["ts", "tsx", "js"], // JND->removed to use testRegEx for test resolution
     moduleFileExtensions: ["ts", "tsx", "js"],
     setupTestFrameworkScriptFile: resolve('config/jest/environment.js'),
     testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/build/'],
