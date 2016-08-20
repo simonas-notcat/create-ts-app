@@ -33,7 +33,6 @@ prompt(
     path.join('config', 'babel.prod.js'),
     path.join('config', 'flow', 'css.js.flow'),
     path.join('config', 'flow', 'file.js.flow'),
-    path.join('config', 'eslint.js'),
     path.join('config', 'paths.js'),
     path.join('config', 'env.js'),
     path.join('config', 'polyfills.js'),
@@ -108,11 +107,6 @@ prompt(
   appPackage.jest = createJestConfig(
     filePath => path.join('<rootDir>', filePath)
   );
-
-  // explicitly specify ESLint config path for editor plugins
-  appPackage.eslintConfig = {
-    extends: './config/eslint.js',
-  };
 
   console.log('Writing package.json');
   fs.writeFileSync(

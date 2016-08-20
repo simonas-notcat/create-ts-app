@@ -36,11 +36,6 @@ module.exports = function(appPath, appName, verbose, originalDirectory) {
     appPackage.scripts[command] = 'tsapp-scripts ' + command;
   });
 
-  // explicitly specify ESLint config path for editor plugins
-  appPackage.eslintConfig = {
-    extends: './node_modules/tsapp-scripts/config/eslint.js',
-  };
-
   fs.writeFileSync(
     path.join(appPath, 'package.json'),
     JSON.stringify(appPackage, null, 2)
@@ -106,6 +101,7 @@ module.exports = function(appPath, appName, verbose, originalDirectory) {
     console.log('We suggest that you begin by typing:');
     console.log();
     console.log('  cd', cdpath);
+    console.log('  npm link typescript');
     console.log('  npm start');
     if (readmeExists) {
       console.log();

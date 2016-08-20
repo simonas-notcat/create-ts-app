@@ -83,14 +83,8 @@ module.exports = {
     moduleTemplates: ['*-loader']
   },
   module: {
-    // First, run the linter.
     // It's important to do this before Babel processes the JS.
     preLoaders: [
-      {
-        test: /\.js$/,
-        loader: 'eslint',
-        include: paths.appSrc
-      }
     ],
     loaders: [
       // Process JS with Babel.
@@ -174,13 +168,6 @@ module.exports = {
         }
       }
     ]
-  },
-  // Point ESLint to our predefined config.
-  eslint: {
-    // TODO: consider separate config for production,
-    // e.g. to enable no-console and no-debugger only in production.
-    configFile: path.join(__dirname, 'eslint.js'),
-    useEslintrc: false
   },
   // We use PostCSS for autoprefixing only.
   postcss: function() {

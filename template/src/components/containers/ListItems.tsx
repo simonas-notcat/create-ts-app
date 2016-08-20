@@ -4,6 +4,7 @@ import * as Redux from 'redux';
 import * as Actions from '../../actions';
 import {getListItems, IProductsModel, IAppState} from '../../reducers'
 import {Grid, ListGroup, ListGroupItem, Glyphicon, Button, DropdownButton, MenuItem} from 'react-bootstrap';
+import './listitems.scss';
 
 
 export interface ListItemProps {

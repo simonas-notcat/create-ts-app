@@ -16,3 +16,9 @@
 ### Todo
 
 * configure babel for production 
+
+
+## 0.1.6 (August 20,2016)
+
+* removed linter 
+* fixed scss configuration

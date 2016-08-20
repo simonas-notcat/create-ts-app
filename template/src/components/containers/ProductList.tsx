@@ -6,7 +6,6 @@ import {IProductsModel, IAppState} from '../../reducers';
 import InputText from '../InputText';
 import {Error} from '../Error';
 import {Grid, ListGroup, ListGroupItem, Glyphicon, Button} from 'react-bootstrap';
-
 export interface ProductListProps {
     products?: IProductsModel
     dispatch?: Redux.Dispatch<any>
