@@ -1,11 +1,8 @@
 import App from '../src/components/containers/App';
 
-describe("adsd", ()=>{
-
-    it("dsdasdassasddass", ()=>{
-
+describe("App", ()=>{
+    it("ass", ()=>{
         expect(App).toBeDefined();
-        expect(true).toBeTruthy();
-
+        expect(false).toBeTruthy();
     })
 });
