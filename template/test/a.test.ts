@@ -1,8 +1,8 @@
 import App from '../src/components/containers/App';
 
 describe("App", ()=>{
-    it("ass", ()=>{
+    it("Simple test", ()=>{
         expect(App).toBeDefined();
-        expect(false).toBeTruthy();
+        expect(true).toBeTruthy();
     })
 });
