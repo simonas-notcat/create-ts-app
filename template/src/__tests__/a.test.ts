@@ -1,4 +1,4 @@
-import App from '../src/components/containers/App';
+import App from '../components/containers/App';
 
 describe("App", ()=>{
     it("Simple test", ()=>{

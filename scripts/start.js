@@ -51,14 +51,14 @@ function formatMessage(message) {
   return message
     // Make some common errors shorter:
     .replace(
-      // Babel syntax error
-      'Module build failed: SyntaxError:',
-      friendlySyntaxErrorLabel
+    // Babel syntax error
+    'Module build failed: SyntaxError:',
+    friendlySyntaxErrorLabel
     )
     .replace(
-      // Webpack file not found error
-      /Module not found: Error: Cannot resolve 'file' or 'directory'/,
-      'Module not found:'
+    // Webpack file not found error
+    /Module not found: Error: Cannot resolve 'file' or 'directory'/,
+    'Module not found:'
     )
     // Internal stacks are generally useless so we strip them
     .replace(/^\s*at\s.*:\d+:\d+[\s\)]*\n/gm, '') // at ... ...:x:y
@@ -81,14 +81,14 @@ function setupCompiler(port) {
   // recompiling a bundle. WebpackDevServer takes care to pause serving the
   // bundle, so if you refresh, it'll wait instead of serving the old one.
   // "invalid" is short for "bundle invalidated", it doesn't imply any errors.
-  compiler.plugin('invalid', function() {
+  compiler.plugin('invalid', function () {
     clearConsole();
     console.log('Compiling...');
   });
 
   // "done" event fires when Webpack has finished recompiling the bundle.
   // Whether or not you have warnings or errors, you will get this event.
-  compiler.plugin('done', function(stats) {
+  compiler.plugin('done', function (stats) {
     clearConsole();
     var hasErrors = stats.hasErrors();
     var hasWarnings = stats.hasWarnings();
@@ -145,23 +145,31 @@ function setupCompiler(port) {
 }
 
 function openBrowser(port) {
+  var uri = 'http://localhost:' + port + '/';
+
   if (process.platform === 'darwin') {
     try {
       // Try our best to reuse existing tab
       // on OS X Google Chrome with AppleScript
       execSync('ps cax | grep "Google Chrome"');
       execSync(
-        'osascript chrome.applescript http://localhost:' + port + '/',
-        {cwd: path.join(__dirname, 'utils'), stdio: 'ignore'}
+        'osascript chrome.applescript ' + uri,
+        { cwd: path.join(__dirname, 'utils'), stdio: 'ignore' }
       );
       return;
     } catch (err) {
-      // Ignore errors.
+      // No already opened Chrome, then open it!
+      try {
+        execSync('open -a "Google Chrome" ' + uri);
+        return;
+      } catch (err) {
+        // Ignore errors, fallback solution.
+      }
     }
   }
   // Fallback to opn
   // (It will always open new tab)
-  opn('http://localhost:' + port + '/');
+  opn(uri);
 }
 
 function addMiddleware(devServer) {

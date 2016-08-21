@@ -9,7 +9,7 @@
 
 module.exports = (resolve, rootDir) => {
   const config = {
-    automock: false,
+    automock: false,    
     moduleNameMapper: {
       '^[./a-zA-Z0-9$_-]+\\.(jpg|png|gif|eot|otf|svg|ttf|woff|woff2|mp4|webm)$': resolve('config/jest/FileStub.js'),
       '^[./a-zA-Z0-9$_-]+\\.css$': resolve('config/jest/CSSStub.js')
@@ -20,15 +20,14 @@ module.exports = (resolve, rootDir) => {
     setupFiles: [
       resolve('config/polyfills.js')
     ],
-    //testFileExtensions: ["ts", "tsx", "js"], // JDN->removed to use testRegEx for test resolution
     moduleFileExtensions: ["ts", "tsx", "js"],
     setupTestFrameworkScriptFile: resolve('config/jest/environment.js'),
     testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/build/'],
-    // Allow three popular conventions:
-    // **/__tests__/*.js
-    // **/*.test.js
-    // **/*.spec.js
-    //testRegex: '(__tests__/.*|\\.(test|spec))\\.(j|t)s(x?)$',
+    // JDN->removed the testFileExtensions to use testRegEx for test resolution.
+    // Allowed patterns:
+    // **/__tests__/*.(j|t)s(x?)
+    // **/*.test.(j|t)s(x?)
+    // **/*.spec.(j|t)s(x?)
     testRegex: '(__tests__/.*|\\.(test|spec))\\.(j|t)s(x?)$',
     testEnvironment: 'node',
     verbose: true

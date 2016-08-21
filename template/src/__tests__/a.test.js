@@ -1,4 +1,4 @@
-App = require('../src/components/containers/App');
+App = require('../components/containers/App');
 
 describe("Javascript!", () => {
     it("Abs!", () => {

@@ -1,6 +1,6 @@
 {
   "name": "tsapp-scripts",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Configuration and scripts for Create react/redux typescript App .",
   "repository": "https://github.com/vgmr/create-ts-app/",
   "license": "BSD-3-Clause",
@@ -15,8 +15,8 @@
     "create-ts-app": "node global-cli/index.js --scripts-version \"$PWD/`npm pack`\"",
     "e2e": "tasks/e2e.sh",
     "start": "node scripts/start.js --debug-template",
-    "test": "node scripts/test.js --debug-template",
-    "test:watch" : "npm test -- -u --watch"
+    "test": "node scripts/test.js --debug-template --u",
+    "test:watch" : "npm run -s test --  --u --watch"
   },
   "files": [
     "PATENTS",
