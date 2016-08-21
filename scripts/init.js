@@ -13,7 +13,7 @@ var spawn = require('cross-spawn');
 var pathExists = require('path-exists');
 var chalk = require('chalk');
 
-module.exports = function(appPath, appName, verbose, originalDirectory) {
+module.exports = function (appPath, appName, verbose, originalDirectory) {
   var ownPath = path.join(appPath, 'node_modules', 'tsapp-scripts');
 
   var appPackage = require(path.join(appPath, 'package.json'));
@@ -22,19 +22,20 @@ module.exports = function(appPath, appName, verbose, originalDirectory) {
   // Copy over some of the devDependencies
   appPackage.dependencies = appPackage.dependencies || {};
   appPackage.devDependencies = appPackage.devDependencies || {};
-  ['react', 'react-dom','react-redux','react-router','redux','redux-thunk','redux-helper','node-sass',
-   'react-addons-css-transition-group','react-bootstrap','bootstrap'].forEach(function (key) {
-    appPackage.dependencies[key] = ownPackage.devDependencies[key];
-  });
+  ['react', 'react-dom', 'react-redux', 'react-router', 'redux', 'redux-thunk', 'redux-helper', 'node-sass',
+    'react-addons-css-transition-group', 'react-bootstrap', 'bootstrap'].forEach(function (key) {
+      appPackage.dependencies[key] = ownPackage.devDependencies[key];
+    });
   ['react-test-renderer'].forEach(function (key) {
     appPackage.devDependencies[key] = ownPackage.devDependencies[key];
   });
 
   // Setup the script rules
   appPackage.scripts = {};
-  ['start', 'build', 'eject', 'test'].forEach(function(command) {
+  ['start', 'build', 'eject', 'test'].forEach(function (command) {
     appPackage.scripts[command] = 'tsapp-scripts ' + command;
   });
+  appPackage.scripts['test:watch'] = 'npm run -s test --  --u --watch';
 
   fs.writeFileSync(
     path.join(appPath, 'package.json'),
@@ -71,8 +72,8 @@ module.exports = function(appPath, appName, verbose, originalDirectory) {
   var args = [
     'install',
     verbose && '--verbose'
-  ].filter(function(e) { return e; });
-  var proc = spawn('npm', args, {stdio: 'inherit'});
+  ].filter(function (e) { return e; });
+  var proc = spawn('npm', args, { stdio: 'inherit' });
   proc.on('close', function (code) {
     if (code !== 0) {
       console.error('`npm ' + args.join(' ') + '` failed');
@@ -84,7 +85,7 @@ module.exports = function(appPath, appName, verbose, originalDirectory) {
     // backward compatibility with old global-cli's.
     var cdpath;
     if (originalDirectory &&
-        path.join(originalDirectory, appName) === appPath) {
+      path.join(originalDirectory, appName) === appPath) {
       cdpath = appName;
     } else {
       cdpath = appPath;
