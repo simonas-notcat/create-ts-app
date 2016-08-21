@@ -1,4 +1,4 @@
-import {createAction,createCheckedAction} from 'redux-helper';
+import {createAction,createPromiseAction} from 'redux-helper';
 
 export const addProduct =  createAction<{name:string}> ('ADD_PRODUCT');
 
@@ -14,7 +14,7 @@ export const dismissError = createAction<void>('DISMISS_ERROR');
 
 export const showError = createAction<string>('SHOW_ERROR');
 
-export const addAsyncProduct = createCheckedAction('ADD_ASYNC_PRODUCT',
+export const addAsyncProduct = createPromiseAction('ADD_ASYNC_PRODUCT',
     loadAsyncProd,
     (res) => addProduct({name:res})
 )
