@@ -16,7 +16,7 @@
     "e2e": "tasks/e2e.sh",
     "start": "node scripts/start.js --debug-template",
     "test": "node scripts/test.js --debug-template --u",
-    "test:watch" : "npm run -s test --  --u --watch"
+    "test:watch": "npm run -s test --  --u --watch"
   },
   "files": [
     "PATENTS",
@@ -60,6 +60,7 @@
     "http-proxy-middleware": "0.17.0",
     "jest": "14.1.0",
     "json-loader": "0.5.4",
+    "node-sass": "^3.8.0",
     "object-assign": "4.1.0",
     "opn": "4.0.2",
     "path-exists": "3.0.0",
@@ -79,7 +80,6 @@
   "devDependencies": {
     "bootstrap": "^3.3.7",
     "bundle-deps": "1.0.0",
-    "node-sass": "^3.8.0",
     "react": "^15.3.0",
     "react-addons-css-transition-group": "^15.3.0",
     "react-bootstrap": "^0.30.2",
