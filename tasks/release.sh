@@ -35,7 +35,7 @@ fi
 rm -rf node_modules
 rm -rf ~/.npm
 npm cache clear
-npm install
+npm install --unsafe-perm
 
 # Force dedupe
 npm dedupe
