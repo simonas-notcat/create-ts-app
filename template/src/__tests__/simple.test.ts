@@ -1,7 +1,7 @@
 import App from '../components/containers/App';
 
-describe("App", ()=>{
-    it("Simple test", ()=>{
+describe("Using Typescript", ()=>{
+    it("Very Simple test", ()=>{
         expect(App).toBeDefined();
         expect(true).toBeTruthy();
     })

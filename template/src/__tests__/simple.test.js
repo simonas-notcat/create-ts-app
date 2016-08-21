@@ -1,7 +1,7 @@
 App = require('../components/containers/App');
 
-describe("Javascript!", () => {
-    it("Abs!", () => {
+describe("Using Javascript!", () => {
+    it("Very simple test", () => {
         expect(App).toBeDefined();
         expect(true).toBeTruthy();
     })
