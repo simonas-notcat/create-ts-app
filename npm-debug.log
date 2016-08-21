@@ -1,0 +1,173 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@3.10.3
+3 info using node@v6.4.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/jodan/Sviluppo/TypeScript/ts-tests/create-ts-app',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/jodan/.npm/tsapp-scripts/0.1.14/package.tgz not in flight; packing
+9 verbose correctMkdir /Users/jodan/.npm correctMkdir not in flight; initializing
+10 info lifecycle tsapp-scripts@0.1.14~prepublish: tsapp-scripts@0.1.14
+11 silly lifecycle tsapp-scripts@0.1.14~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ '/Users/jodan/.npm/tsapp-scripts/0.1.14/package.tgz',
+12 verbose tar pack   '/Users/jodan/Sviluppo/TypeScript/ts-tests/create-ts-app' ]
+13 verbose tarball /Users/jodan/.npm/tsapp-scripts/0.1.14/package.tgz
+14 verbose folder /Users/jodan/Sviluppo/TypeScript/ts-tests/create-ts-app
+15 verbose addLocalTarball adding from inside cache /Users/jodan/.npm/tsapp-scripts/0.1.14/package.tgz
+16 verbose correctMkdir /Users/jodan/.npm correctMkdir not in flight; initializing
+17 silly cache afterAdd tsapp-scripts@0.1.14
+18 verbose afterAdd /Users/jodan/.npm/tsapp-scripts/0.1.14/package/package.json not in flight; writing
+19 verbose correctMkdir /Users/jodan/.npm correctMkdir not in flight; initializing
+20 verbose afterAdd /Users/jodan/.npm/tsapp-scripts/0.1.14/package/package.json written
+21 silly publish { name: 'tsapp-scripts',
+21 silly publish   version: '0.1.14',
+21 silly publish   description: 'Configuration and scripts for Create react/redux typescript App .',
+21 silly publish   repository: { type: 'git', url: 'https://github.com/vgmr/create-ts-app/' },
+21 silly publish   license: 'BSD-3-Clause',
+21 silly publish   engines: { node: '>=4' },
+21 silly publish   bugs: { url: 'https://github.com/vgmr/create-ts-app/issues' },
+21 silly publish   scripts:
+21 silly publish    { build: 'node scripts/build.js --debug-template',
+21 silly publish      'create-ts-app': 'node global-cli/index.js --scripts-version "$PWD/`npm pack`"',
+21 silly publish      e2e: 'tasks/e2e.sh',
+21 silly publish      start: 'node scripts/start.js --debug-template',
+21 silly publish      test: 'node scripts/test.js --debug-template --u',
+21 silly publish      'test:watch': 'npm run -s test --  --u --watch' },
+21 silly publish   files: [ 'PATENTS', 'bin', 'config', 'scripts', 'template' ],
+21 silly publish   bin: { 'tsapp-scripts': './bin/tsapp-scripts.js' },
+21 silly publish   dependencies:
+21 silly publish    { autoprefixer: '6.4.0',
+21 silly publish      'babel-core': '6.11.4',
+21 silly publish      'babel-jest': '14.1.0',
+21 silly publish      'babel-loader': '6.2.4',
+21 silly publish      'babel-plugin-syntax-async-functions': '6.8.0',
+21 silly publish      'babel-plugin-syntax-trailing-function-commas': '6.8.0',
+21 silly publish      'babel-plugin-transform-class-properties': '6.11.5',
+21 silly publish      'babel-plugin-transform-object-rest-spread': '6.8.0',
+21 silly publish      'babel-plugin-transform-react-constant-elements': '6.9.1',
+21 silly publish      'babel-plugin-transform-regenerator': '6.11.4',
+21 silly publish      'babel-plugin-transform-runtime': '6.12.0',
+21 silly publish      'babel-preset-es2015': '6.9.0',
+21 silly publish      'babel-preset-es2016': '6.11.3',
+21 silly publish      'babel-preset-react': '6.11.1',
+21 silly publish      'babel-runtime': '6.11.6',
+21 silly publish      'case-sensitive-paths-webpack-plugin': '1.1.3',
+21 silly publish      chalk: '1.1.3',
+21 silly publish      'connect-history-api-fallback': '1.3.0',
+21 silly publish      'cross-spawn': '4.0.0',
+21 silly publish      'css-loader': '0.23.1',
+21 silly publish      'detect-port': '1.0.0',
+21 silly publish      'extract-text-webpack-plugin': '1.0.1',
+21 silly publish      'file-loader': '0.9.0',
+21 silly publish      filesize: '3.3.0',
+21 silly publish      'fs-extra': '0.30.0',
+21 silly publish      'gzip-size': '3.0.0',
+21 silly publish      'html-loader': '0.4.3',
+21 silly publish      'html-webpack-plugin': '2.22.0',
+21 silly publish      'http-proxy-middleware': '0.17.0',
+21 silly publish      jest: '14.1.0',
+21 silly publish      'json-loader': '0.5.4',
+21 silly publish      'node-sass': '^3.8.0',
+21 silly publish      'object-assign': '4.1.0',
+21 silly publish      opn: '4.0.2',
+21 silly publish      'path-exists': '3.0.0',
+21 silly publish      'postcss-loader': '0.9.1',
+21 silly publish      promise: '7.1.1',
+21 silly publish      'recursive-readdir': '2.0.0',
+21 silly publish      rimraf: '2.5.4',
+21 silly publish      'sass-loader': '^4.0.0',
+21 silly publish      'strip-ansi': '3.0.1',
+21 silly publish      'style-loader': '0.13.1',
+21 silly publish      'ts-loader': '^0.8.2',
+21 silly publish      'url-loader': '0.5.7',
+21 silly publish      webpack: '1.13.1',
+21 silly publish      'webpack-dev-server': '1.14.1',
+21 silly publish      'whatwg-fetch': '1.0.0',
+21 silly publish      fsevents: '1.0.14' },
+21 silly publish   devDependencies:
+21 silly publish    { bootstrap: '^3.3.7',
+21 silly publish      'bundle-deps': '1.0.0',
+21 silly publish      react: '^15.3.0',
+21 silly publish      'react-addons-css-transition-group': '^15.3.0',
+21 silly publish      'react-bootstrap': '^0.30.2',
+21 silly publish      'react-dom': '^15.3.0',
+21 silly publish      'react-redux': '^4.4.5',
+21 silly publish      'react-router': '^2.6.1',
+21 silly publish      'react-test-renderer': '^15.3.0',
+21 silly publish      redux: '^3.5.2',
+21 silly publish      'redux-helper': '~0.0.28',
+21 silly publish      'redux-thunk': '^2.1.0' },
+21 silly publish   optionalDependencies: { fsevents: '1.0.14' },
+21 silly publish   readme: '# Create-ts-app ![npm version](https://img.shields.io/npm/v/tsapp-scripts.svg?style=flat)\n_this is a fork of facebook [create-react-app](https://github.com/facebookincubator/create-react-app)_ \n\nCreate React apps with no build configuration.\nIncludes:\n\n* react\n* redux\n* bootstrap\n* jest\n* sass\n\n```sh\nnpm install -g create-ts-app\n\ncreate-ts-app my-app\ncd my-app/\nnpm start\n\n```\n\nThen open [http://localhost:7777/](http://localhost:7777/) to see your app.<br>\nWhen you’re ready to deploy to production, create a minified bundle with `npm run build`.\n',
+21 silly publish   readmeFilename: 'README.md',
+21 silly publish   gitHead: 'c6fb2bfe056b9f63fb5cded819f9efb531d0a716',
+21 silly publish   _id: 'tsapp-scripts@0.1.14',
+21 silly publish   _shasum: 'ea74fb372ed175461adfab77729bb168fe71028c',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 silly mapToRegistry name tsapp-scripts
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry https://registry.npmjs.org/
+26 silly mapToRegistry data Result {
+26 silly mapToRegistry   raw: 'tsapp-scripts',
+26 silly mapToRegistry   scope: null,
+26 silly mapToRegistry   escapedName: 'tsapp-scripts',
+26 silly mapToRegistry   name: 'tsapp-scripts',
+26 silly mapToRegistry   rawSpec: '',
+26 silly mapToRegistry   spec: 'latest',
+26 silly mapToRegistry   type: 'tag' }
+27 silly mapToRegistry uri https://registry.npmjs.org/tsapp-scripts
+28 verbose publish registryBase https://registry.npmjs.org/
+29 silly publish uploading /Users/jodan/.npm/tsapp-scripts/0.1.14/package.tgz
+30 verbose request uri https://registry.npmjs.org/tsapp-scripts
+31 verbose request sending authorization for write operation
+32 info attempt registry request try #1 at 6:19:37 PM
+33 verbose request using bearer token for auth
+34 verbose request id 212ada4be2b31f6b
+35 http request PUT https://registry.npmjs.org/tsapp-scripts
+36 http 403 https://registry.npmjs.org/tsapp-scripts
+37 verbose headers { 'content-type': 'application/json',
+37 verbose headers   'cache-control': 'max-age=300',
+37 verbose headers   'content-length': '96',
+37 verbose headers   'accept-ranges': 'bytes',
+37 verbose headers   date: 'Sun, 21 Aug 2016 16:19:41 GMT',
+37 verbose headers   via: '1.1 varnish',
+37 verbose headers   connection: 'keep-alive',
+37 verbose headers   'x-served-by': 'cache-fra1226-FRA',
+37 verbose headers   'x-cache': 'MISS',
+37 verbose headers   'x-cache-hits': '0',
+37 verbose headers   'x-timer': 'S1471796377.830026,VS0,VE3368',
+37 verbose headers   vary: 'Accept-Encoding' }
+38 verbose request invalidating /Users/jodan/.npm/registry.npmjs.org/tsapp-scripts on PUT
+39 error publish Failed PUT 403
+40 verbose stack Error: "You cannot publish over the previously published version 0.1.14." : tsapp-scripts
+40 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+40 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+40 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+40 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:200:22)
+40 verbose stack     at emitTwo (events.js:106:13)
+40 verbose stack     at Request.emit (events.js:191:7)
+40 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1067:10)
+40 verbose stack     at emitOne (events.js:101:20)
+40 verbose stack     at Request.emit (events.js:188:7)
+40 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:988:12)
+41 verbose statusCode 403
+42 verbose pkgid tsapp-scripts
+43 verbose cwd /Users/jodan/Sviluppo/TypeScript/ts-tests/create-ts-app
+44 error Darwin 15.6.0
+45 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "publish"
+46 error node v6.4.0
+47 error npm  v3.10.3
+48 error code E403
+49 error "You cannot publish over the previously published version 0.1.14." : tsapp-scripts
+50 error If you need help, you may report this error at:
+50 error     <https://github.com/npm/npm/issues>
+51 verbose exit [ 1, true ]
