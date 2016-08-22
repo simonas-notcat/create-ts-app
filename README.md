@@ -1,4 +1,4 @@
-# Create-ts-app ![npm version](https://img.shields.io/npm/v/tsapp-scripts.svg?style=flat)
+# Create-ts-app [![npm version](https://img.shields.io/npm/v/tsapp-scripts.svg?style=flat)](https://www.npmjs.com/package/create-ts-app)
 _this is a fork of facebook [create-react-app](https://github.com/facebookincubator/create-react-app)_ 
 
 Create React apps with no build configuration.
