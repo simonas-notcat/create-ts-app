@@ -16,7 +16,7 @@
     "e2e": "tasks/e2e.sh",
     "start": "node scripts/start.js --debug-template",
     "test": "node scripts/test.js --debug-template --u",
-    "test:watch": "npm run -s test --  --u --watch"
+    "test:watch": "npm run -s test & npm run -s test --  --u --watch --onlyChanged"
   },
   "files": [
     "PATENTS",

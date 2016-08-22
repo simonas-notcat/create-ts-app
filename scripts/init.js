@@ -35,7 +35,7 @@ module.exports = function (appPath, appName, verbose, originalDirectory) {
   ['start', 'build', 'eject', 'test'].forEach(function (command) {
     appPackage.scripts[command] = 'tsapp-scripts ' + command;
   });
-  appPackage.scripts['test:watch'] = 'npm run -s test --  --u --watch';
+  appPackage.scripts['test:watch'] = 'npm run -s test & npm run -s test --  --u --watch --onlyChanged';
 
   fs.writeFileSync(
     path.join(appPath, 'package.json'),
