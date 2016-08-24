@@ -1,5 +1,10 @@
-# Create-ts-app [![npm version](https://img.shields.io/npm/v/tsapp-scripts.svg?style=flat)](https://www.npmjs.com/package/create-ts-app) [![build](https://travis-ci.org/vgmr/create-ts-app.svg)](https://travis-ci.org/vgmr/create-ts-app)
+# Create-ts-app 
 _this is a fork of facebook [create-react-app](https://github.com/facebookincubator/create-react-app)_ 
+
+[![npm version](https://img.shields.io/npm/v/tsapp-scripts.svg?style=flat)](https://www.npmjs.com/package/create-ts-app) [![build](https://travis-ci.org/vgmr/create-ts-app.svg)](https://travis-ci.org/vgmr/create-ts-app)
+
+[![dependency](https://david-dm.org/vgmr/create-ts-app/status.svg)](https://david-dm.org/vgmr/create-ts-app) [![devDep](https://david-dm.org/vgmr/create-ts-app/dev-status.svg)](https://david-dm.org/vgmr/create-ts-app?type=dev)
+
 
 Create React apps with no build configuration.
 Includes:
