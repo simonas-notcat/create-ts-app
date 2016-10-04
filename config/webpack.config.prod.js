@@ -93,7 +93,6 @@ module.exports = {
       },
       {
         test: /\.ts(x?)$/,
-        include: paths.appSrc,
         loader: 'ts'
       },
       // The notation here is somewhat confusing.
