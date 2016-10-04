@@ -98,7 +98,6 @@ module.exports = {
       },
       {
         test: /\.ts(x?)$/,
-        include: paths.appSrc,
         loader: 'ts'
       },
       // "postcss" loader applies autoprefixer to our CSS.
